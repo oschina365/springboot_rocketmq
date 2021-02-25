@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: dev
+  mvc:
+    locale: zh_CN
+    date-format: yyyy-MM-dd
+  servlet:
+    multipart:
+      max-file-size: 15MB
+      max-request-size: 100MB
+
+#server
+server:
+  address: 127.0.0.1
+  port: 88
+  session-timeout: 30
+  tomcat.max-threads: 0
+  tomcat.uri-encoding: UTF-8
+  error:
+    path: /error
