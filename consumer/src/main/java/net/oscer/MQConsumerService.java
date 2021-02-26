@@ -29,7 +29,7 @@ public class MQConsumerService {
     public class ConsumerSend2 implements RocketMQListener<String> {
         @Override
         public void onMessage(String message) {
-            String.format("监听到消息：{%s}", JSON.toJSONString(message));
+            System.out.println(String.format("监听到消息：{%s}", JSON.toJSONString(message)));
         }
     }
 

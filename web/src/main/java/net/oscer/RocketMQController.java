@@ -1,6 +1,7 @@
 package net.oscer;
 
 import org.apache.rocketmq.client.producer.SendResult;
+import org.apache.rocketmq.remoting.exception.RemotingConnectException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +16,26 @@ public class RocketMQController {
 
     @GetMapping("/send")
     public void send() {
-        mqProducerService.send("123");
+        try{
+            mqProducerService.send("123");
+        }catch (Exception e){
+            if(e instanceof RemotingConnectException){
+                System.out.println("rocktemq connect error");
+            }
+            e.printStackTrace();
+        }
+
+    }
+
+    @GetMapping("/sendResult")
+    public void sendResult(){
+        mqProducerService.sendMsg("sendResult");
+    }
+
+    @GetMapping("/sendDelayMsg")
+    public void sendDelayMsg(){
+        mqProducerService.sendDelayMsg("10",10);
+        mqProducerService.sendDelayMsg("1",1);
     }
 
     @GetMapping("/sendTag")

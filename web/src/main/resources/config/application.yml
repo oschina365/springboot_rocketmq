@@ -12,7 +12,7 @@ spring:
 #server
 server:
   address: 127.0.0.1
-  port: 88
+  port: 8888
   session-timeout: 30
   tomcat.max-threads: 0
   tomcat.uri-encoding: UTF-8

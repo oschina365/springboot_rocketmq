@@ -12,7 +12,7 @@
     <artifactId>procuce</artifactId>
     <packaging>war</packaging>
 
-    <name>consumer Maven Webapp</name>
+    <name>procuce</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -32,7 +32,7 @@
     </dependencies>
 
     <build>
-        <finalName>consumer</finalName>
+        <finalName>procuce</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
